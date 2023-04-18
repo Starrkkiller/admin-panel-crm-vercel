@@ -31,3 +31,45 @@ body {
   --background-color-light-blue: #85b7ee;
   --canceled-color: 255;
 }
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.content {
+  width: 25%;
+  height: 50%;
+  margin: auto auto;
+}
+
+.logo {
+  color: var(--main-elements-color);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.greeting {
+  color: var(--main-elements-color);
+  line-height: 1.4rem;
+  margin: 3rem 0;
+}
+
+.input:last-child {
+  margin-top: 1rem;
+}
+
+.logInButton {
+  border: 1px solid var(--main-elements-color);
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.logInButton:hover {
+  color: #fff;
+  background-color: var(--main-elements-color);
+  transition: all 0.2s ease;
+}

@@ -9,6 +9,7 @@ import { ReactComponent as Pencil } from "./assets/pencil.svg";
 import { ReactComponent as Refresh } from "./assets/refresh.svg";
 import { ReactComponent as Search } from "./assets/search.svg";
 import { ReactComponent as Sun } from "./assets/sun.svg";
+import { ReactComponent as Eye } from "./assets/Eye.svg";
 import { ReactComponent as Arrow } from "./assets/v_arrow.svg";
 import { ReactComponent as X_large } from "./assets/x-large.svg";
 import { ReactComponent as X_medium } from "./assets/x-medium.svg";
@@ -49,6 +50,15 @@ export function Icon({ className = "", type, fill = "", stroke = "" }) {
     case "dot":
       return (
         <Dot
+          width="1rem"
+          fill={fill}
+          stroke={stroke}
+          className={cn(className)}
+        />
+      );
+    case "eye":
+      return (
+        <Eye
           width="1rem"
           fill={fill}
           stroke={stroke}

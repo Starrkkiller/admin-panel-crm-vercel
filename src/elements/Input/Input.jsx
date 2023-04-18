@@ -8,6 +8,7 @@ Input.propTypes = {
   onChange: func,
   onReset: func,
   onKeyDown: func,
+  onEyeClick: func,
   isIncorrect: bool,
   disabled: bool,
   label: string,
@@ -16,6 +17,7 @@ Input.propTypes = {
   postfix: any,
   className: string,
   readOnly: bool,
+  type: string,
 };
 
 const noop = () => {};
@@ -25,6 +27,7 @@ export function Input({
   onChange = noop,
   onReset = noop,
   onKeyDown = noop,
+  onEyeClick,
   isIncorrect = false,
   disabled = false,
   label,
@@ -33,6 +36,7 @@ export function Input({
   postfix = null,
   className = "",
   readOnly = false,
+  type,
 }) {
   if (disabled && isIncorrect) {
     isIncorrect = false;
@@ -44,6 +48,9 @@ export function Input({
     postfixElement = <Button disabled icon="locked" />;
   } else if (value) {
     postfixElement = <Button isShort icon="x-medium" onClick={onReset} />;
+  }
+  if (type === "password" || type === "text") {
+    postfixElement = <Button isShort icon="eye" onClick={onEyeClick} />;
   }
   const componentStyles = cn(styles._, className, {
     [styles.incorrect]: isIncorrect,
@@ -64,6 +71,7 @@ export function Input({
             disabled={!!disabled}
             readOnly={!!readOnly}
             onKeyDown={onKeyDown}
+            type={type}
           />
           {postfixElement}
         </div>

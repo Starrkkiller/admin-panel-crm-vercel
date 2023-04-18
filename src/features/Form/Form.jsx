@@ -167,7 +167,6 @@ export function Form() {
             onChange={createHandleValueChanger("confirmationCodeValue")}
             onReset={createHandleValueReset("confirmationCodeValue")}
             isIncorrect={!!errors.code}
-            placeholder="123"
           />
         </div>
 

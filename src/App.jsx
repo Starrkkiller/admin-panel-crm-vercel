@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import styles from "./App.module.css";
 import { Input } from "./elements/Input/Input";
 import { Button } from "./elements/Button/Button";
@@ -60,7 +61,7 @@ function App() {
   const handleSetPasswordChange = ({ target: { value } }) => setPassword(value);
 
   return (
-    <Provider store={store}>
+    <>
       {!isSuccessfulLogin ? (
         <div className={styles.wrapper}>
           <div className={styles.content}>
@@ -98,9 +99,11 @@ function App() {
           </div>
         </div>
       ) : (
-        <OrdersList />
+        <Provider store={store}>
+          <OrdersList />
+        </Provider>
       )}
-    </Provider>
+    </>
   );
 }
 
